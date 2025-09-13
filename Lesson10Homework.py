@@ -1,4 +1,5 @@
-#自動測試的網站：NETFLIX
+#自動測試的網站：PChome
+#開啟網頁、驗證網頁Title
 import pytest, os, time
 from playwright.sync_api import sync_playwright, Page, Browser
 Script = os.path.basename(__file__)
@@ -25,13 +26,13 @@ class TestPlaywright01:
         print("--- end test ---")
     
     ### Frontend Tests ###
-    def test01_netflix_webopen(self):
-        print("Testing Netflix webpage opening function")
+    def test01_pchome_webopen(self):
+        print("Testing PChome webpage opening function")
         
-        self.page.goto("https://www.netflix.com/tw/")
+        self.page.goto("https://24h.pchome.com.tw/")
         time.sleep(3)
-        assert "netflix台灣讓您在線上觀賞節目與電影" in self.page.title().lower()
+        assert "PChome 24h購物" in self.page.title()
     
    
 if __name__ == '__main__':
-    pytest.main(["-s", Script + "::TestPlaywright01::test01_netflix_webopen"])
+    pytest.main(["-s", Script + "::TestPlaywright01::test01_pchome_webopen"])
