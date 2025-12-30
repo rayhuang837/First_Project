@@ -1,3 +1,4 @@
+#python -m pytest test/test_patch_booking.py
 #測試Booking API - 訂單部分資料更新
 #運用設定檔config及fixture
 
